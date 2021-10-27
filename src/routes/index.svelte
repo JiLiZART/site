@@ -239,7 +239,7 @@
                 {#each githubProjects as item (item.title)}
                 <li class="list__item projects__item" role="listitem">
                     <GithubFavicon class="projects__item-icon" aria-hidden="true" />
-                    <PageLink class="projects__item-link" :href="item.url">
+                    <PageLink class="projects__item-link" href={item.url}>
                         { item.title }
                     </PageLink>
                     <span class="projects__item-text">
@@ -259,7 +259,7 @@
                 {#each habrArticles as item (item.title)}
                 <li class="list__item articles__item" role="listitem">
                     <HabrFavicon class="articles__item-icon" aria-hidden="true" />
-                    <PageLink class="articles__item-link" :href="item.url">
+                    <PageLink class="articles__item-link" href={item.url}>
                         { item.title }
                     </PageLink>
                 </li>

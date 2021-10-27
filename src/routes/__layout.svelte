@@ -45,9 +45,7 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="me" href="mailto:nikolay@artkost.ru">
     <link rel="shortcut icon" href="/favicon-96x96.png">
-    <link rel="manifest" href="/_nuxt/manifest.1d4688ff.json" data-hid="manifest">
-    <link rel="shortcut icon" href="/_nuxt/icons/icon_64x64.d9af1f.png">
-    <link rel="apple-touch-icon" href="/_nuxt/icons/icon_512x512.d9af1f.png" sizes="512x512">
+    <link rel="manifest" href="/manifest.json" data-hid="manifest">
 </svelte:head>
 
 <div class="page" itemref="data-author" itemscope itemtype="http://schema.org/WebSite">

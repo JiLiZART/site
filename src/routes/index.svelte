@@ -79,19 +79,17 @@
         </h1>
         <PageDescription>
             Работаю JavaScript Разработчиком в
-            <PageLink href="https://www.ultimate-guitar.com/" aria-label="Компания Ultimate Guitar">
-                Ultimate Guitar
+            <PageLink href="https://mu.se/" aria-label="Компания Muse Group">
+                Muse Group
             </PageLink>
             <span aria-hidden="true">
           🎸
         </span>
-            <br> По вечерам помогаю улучшать
-            <PageLink href="https://skillsbord.com/" aria-label="Проект Skillsbord">
-                Skillsbord
+            <br> над проектом
+            <PageLink href="https://musescore.com" aria-label="Проект Musescore">
+                Musescore
             </PageLink>
-            <span aria-hidden="true">
-          🦄
-        </span>
+            <span aria-hidden="true">🎶</span>
             <br>
             <span class="page__text page__text_gray page__text_small">
           Раньше проходил стажировку в <PageLink href="https://skyeng.ru/" aria-label="Skyeng">
@@ -108,19 +106,24 @@
     </header>
     <main class="main" role="main">
         <article tabindex="2">
-            <h3 class="page__h3">
-                Что умею
-            </h3>
             <TechsLogos class="index-page__techs" />
             <ul class="list list_bullets" aria-label="Список ключевых слов технологий" role="list">
                 <li class="list__item" itemprop="keywords" role="listitem">
-                    JavaScript ES5, ES6, TypeScript, Node.js
+                    <b>React</b>, Redux, MobX, ReactRouter, Next.js
                 </li>
                 <li class="list__item" itemprop="keywords" role="listitem">
-                    SPA на React, Redux, MobX, ReactRouter, Vue.js, Vuex, VueRouter, Angular 2, NgRx
+                    <b>Vue.js</b>, Vuex, VueRouter, Nuxt.js
                 </li>
                 <li class="list__item" itemprop="keywords" role="listitem">
-                    REST API на Express, Koa, Yii по
+                    <b>Svelte</b>, SvelteKit
+                </li>
+                <li class="list__item" itemprop="keywords" role="listitem">
+                    JavaScript ES5, ES6, <b>TypeScript</b>, Node.js
+                </li>
+            </ul>
+            <ul class="list" aria-label="Список менее ключевых слов технологий" role="list">
+                <li class="list__item" itemprop="keywords" role="listitem">
+                    REST API на Express, Koa, Adonis.js по
                     <PageLink href="http://jsonapi.org/">
                         jsonapi
                     </PageLink>
@@ -134,27 +137,40 @@
                     </PageLink>
                 </li>
                 <li class="list__item" itemprop="keywords" role="listitem">
-                    Полный стек БЭМ (Который у Яндекса), bem.js, bemjson, bh.js, bemtree
-                </li>
-                <li class="list__item" itemprop="keywords" role="listitem">
                     HTML5, CSS3, Stylus, Less, Sass, PostCSS и БЭМ методология
                 </li>
                 <li class="list__item" itemprop="keywords" role="listitem">
-                    PHP 5/7, Yii1, Yii2
-                </li>
-                <li class="list__item" itemprop="keywords" role="listitem">
-                    Сборщики Gulp, Grunt, Webpack 3 и ENB
+                    <i>Сборщики Webpack, Gulp, Grunt</i>
                 </li>
                 <li class="list__item" role="listitem">
-                    jQuery, ну а как без него?
+                    <i>jQuery, ну а как без него?</i>
                 </li>
             </ul>
+            <!-- /.list -->
         </article>
         <article tabindex="3">
             <h3 class="page__h3">
                 Что изучаю
             </h3>
             <ul class="list" aria-label="Список книг которые читаю" role="list">
+                <li class="list__item" role="listitem">
+                    Прошёл курс
+                    <PageLink
+                        aria-label="Прошёл курс Введение в архитектуру ЭВМ. Элементы операционных систем."
+                        href="https://stepik.org/cert/1093412"
+                    >
+                        <s>Введение в архитектуру ЭВМ. Элементы операционных систем.</s>
+                    </PageLink>
+                </li>
+                <li class="list__item" role="listitem">
+                    Книгу
+                    <PageLink
+                        aria-label="Прочитал книгу Чистая архитектура. Искусство разработки программного обеспечения"
+                        href="https://www.ozon.ru/product/chistaya-arhitektura-iskusstvo-razrabotki-programmnogo-obespecheniya-martin-robert-martin-robert-211433166/"
+                    >
+                        <s>Чистая архитектура. Искусство разработки программного обеспечения</s>
+                    </PageLink>
+                </li>
                 <li class="list__item" role="listitem">
                     Книгу
                     <PageLink
@@ -181,23 +197,11 @@
                 <li class="list__item" role="listitem">
                     Книгу
                     <PageLink
-                        aria-label="Читаю книгу The Rust
+                        aria-label="Прочитал книгу The Rust
             Programming Language"
                         href="https://rurust.github.io/rust_book_ru/"
                     >
-                        The Rust
-                        Programming Language
-                    </PageLink>
-                </li>
-
-                <li class="list__item" role="listitem">
-                    <PageLink
-                        aria-label="Читаю книгу Build
-            Web Application with Golang"
-                        href="https://github.com/astaxie/build-web-application-with-golang/blob/master/ru/preface.md"
-                    >
-                        Build
-                        Web Application with Golang
+                        <s>The Rust Programming Language</s>
                     </PageLink>
                 </li>
 
@@ -340,8 +344,11 @@
     .list__item {
         margin-bottom: 0.5rem;
     }
-    .list_bullets .list__item:before {
-        content: '— ';
+
+    .list_bullets {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: black;
     }
 
     .main {
@@ -372,6 +379,7 @@
     .articles .articles__item {
         display: flex;
         flex-direction: row;
+        align-items: center;
     }
     .articles .articles__item-link.articles__item-link,
     .articles .articles__item-icon.articles__item-icon {

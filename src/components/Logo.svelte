@@ -1,6 +1,6 @@
 <span class="logo" title="artkost" aria-hidden="true"></span>
 
-<style >
+<style>
     .logo {
         margin-bottom: 10px;
         display: block;

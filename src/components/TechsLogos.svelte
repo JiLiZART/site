@@ -1,10 +1,10 @@
 <script >
-    let className;
+    let className = '';
 
     export { className as class };
 </script>
 
-<div {...$$props} class={`${className} techs-logos`} aria-label="Спсисок технологий которые знаю" role="list" tab-index="">
+<div {...$$props} class="techs-logos {className}" aria-label="Спсисок технологий которые знаю" role="list" tab-index="">
     <span class="techs-logos__icon techs-logos__icon_js" role="listitem" title="Javascript"></span>
     <span class="techs-logos__icon techs-logos__icon_ts" role="listitem" title="Typescript"></span>
     <span class="techs-logos__icon techs-logos__icon_node" role="listitem" title="Node.js"></span>
@@ -26,6 +26,11 @@
 </div>
 
 <style>
+    .techs-logos {
+        /*margin-top: 1rem;*/
+        /*margin-bottom: 1rem;*/
+    }
+
     .techs-logos__icon {
         display: inline-block;
         vertical-align: top;

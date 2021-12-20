@@ -1,7 +1,7 @@
 <script>
     import Logo from '../components/Logo.svelte'
     import Footer from '../components/Footer.svelte'
-
+    import links from '../data/links';
 </script>
 
 <svelte:head>
@@ -53,7 +53,7 @@
         <Logo />
     </header>
     <slot></slot>
-    <Footer />
+    <Footer links={links} />
 </div>
 
 <!-- Google Tag Manager (noscript) -->

@@ -1,4 +1,4 @@
-<span {...$$props} class="habr-favicon" title="Habrahabr" ></span>
+<span {...$$props} class="habr-favicon" title="Habrahabr"></span>
 
 <style>
     .habr-favicon {

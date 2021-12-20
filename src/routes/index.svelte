@@ -1,82 +1,25 @@
 <script>
     import PageDescription from '../components/PageDescription.svelte'
     import PageLink from '../components/PageLink.svelte'
+    import PageText from '../components/PageText.svelte'
+    import Main from '../components/Main.svelte'
+    import List from '../components/List.svelte'
+    import ListItem from '../components/ListItem.svelte'
+    import HeadingSecondary from '../components/HeadingSecondary.svelte'
+    import HeadingPrimary from '../components/HeadingPrimary.svelte'
     import TechsLogos from '../components/TechsLogos.svelte'
-    import GithubFavicon from '../components/GithubFavicon.svelte'
-    import HabrFavicon from '../components/HabrFavicon.svelte';
+    import Articles from '../components/Articles.svelte';
+    import Projects from '../components/Projects.svelte';
+    import Badge from '../components/Badge.svelte';
+    import habrArticles from '../data/articles';
+    import githubProjects from '../data/projects';
 
-    const githubProjects = [
-        {
-            url: 'https://github.com/JiLiZART/bbob',
-            title: 'BBob',
-            text: 'быстрый парсер BB кодов в AST дерево, без регулярок и зависимостей'
-        },
-        {
-            url: 'https://github.com/JiLiZART/sequence-as-promise',
-            title: 'sequence as promise',
-            text: 'выполняет массив функций последовательно и возвращает промис'
-        },
-        {
-            url: 'https://github.com/JiLiZART/may.js',
-            title: 'may.js',
-            text: 'маленькая монадоподобная функция'
-        },
-        {
-            url: 'https://github.com/w3gh/ghost.js',
-            title: 'ghost.js',
-            text: `<s>хост</s> и чат бот для Battle.net/PvPGN для Warcraft 3 на js`
-        },
-        {
-            url: 'https://github.com/artkost/yii2-qa',
-            title: 'yii2-qa',
-            text: 'модуль вопросов и ответов на Yii2'
-        },
-        {
-            url: 'https://github.com/jilizart/task-tracker',
-            title: 'task-tracker',
-            text: 'прототип таск трекера на Vue 2 для проверки бизнес идеи'
-        }
-    ]
-
-    const habrArticles = [
-        {
-            url: 'https://habrahabr.ru/post/341564/',
-            title: 'Управляем состоянием в Angular при помощи Mobx'
-        },
-        {
-            url: 'https://habrahabr.ru/post/329580/',
-            title: 'Что нового нас ждет в Swift 4?'
-        },
-        {
-            url: 'https://habrahabr.ru/post/282578/',
-            title: 'Mobx — управление состоянием вашего приложения'
-        },
-        {
-            url: 'https://habrahabr.ru/post/264423/',
-            title: 'Изоморфное Приложение с React и Redux'
-        },
-        {
-            url: 'https://habrahabr.ru/post/233705/',
-            title: 'Настоящее модульное тестирование в AngularJS'
-        },
-        {
-            url: 'https://habrahabr.ru/post/217689/',
-            title: 'Ansible и Docker, почему и зачем?'
-        },
-        {
-            url: 'https://habrahabr.ru/post/147038/',
-            title: 'MVC умер, пришло время MOVE'
-        }
-    ]
-
-    const badgeStyle = 'background-image: url(https://www.codewars.com/users/JiLiZART/badges/micro)'
+    const codewarsBadgeUrl = 'https://www.codewars.com/users/JiLiZART/badges/micro'
 </script>
 
-<section class="index-page" itemprop="author" itemscope itemtype="http://schema.org/Person">
+<section itemprop="author" itemscope itemtype="http://schema.org/Person">
     <header role="banner" tabindex="1">
-        <h1 class="page__h1" itemprop="name">
-            Николай Костюрин
-        </h1>
+        <HeadingPrimary itemprop="name">Николай Костюрин</HeadingPrimary>
         <PageDescription>
             Работаю JavaScript Разработчиком в
             <PageLink href="https://mu.se/" aria-label="Компания Muse Group">
@@ -91,38 +34,44 @@
             </PageLink>
             <span aria-hidden="true">🎶</span>
             <br>
-            <span class="page__text page__text_gray page__text_small">
-          Раньше проходил стажировку в <PageLink href="https://skyeng.ru/" aria-label="Skyeng">
-            Skyeng
-          </PageLink> 👷,
-          проектировал SPA в <PageLink href="https://www.medialooks.com" aria-label="Medialooks">
-            Medialooks
-          </PageLink> 👨‍🏫 и
-          создавал сложные интерфейсы в <PageLink href="http://edster.ru" aria-label="Edster">
-            Edster
-          </PageLink> 👨‍💻
-        </span>
+            <PageText gray small>
+                Раньше проходил стажировку в
+                <PageLink href="https://skyeng.ru/" aria-label="Skyeng">
+                    Skyeng
+                </PageLink>
+                👷,
+                проектировал SPA в
+                <PageLink href="https://www.medialooks.com" aria-label="Medialooks">
+                    Medialooks
+                </PageLink>
+                👨‍🏫 и
+                создавал сложные интерфейсы в
+                <PageLink href="http://edster.ru" aria-label="Edster">
+                    Edster
+                </PageLink>
+                👨‍💻
+            </PageText>
         </PageDescription>
     </header>
-    <main class="main" role="main">
+    <Main>
         <article tabindex="2">
-            <TechsLogos class="index-page__techs" />
-            <ul class="list list_bullets" aria-label="Список ключевых слов технологий" role="list">
-                <li class="list__item" itemprop="keywords" role="listitem">
+            <TechsLogos/>
+            <List bullets aria-label="Список ключевых слов технологий">
+                <ListItem itemprop="keywords">
                     <b>React</b>, Redux, MobX, ReactRouter, Next.js
-                </li>
-                <li class="list__item" itemprop="keywords" role="listitem">
+                </ListItem>
+                <ListItem itemprop="keywords">
                     <b>Vue.js</b>, Vuex, VueRouter, Nuxt.js
-                </li>
-                <li class="list__item" itemprop="keywords" role="listitem">
+                </ListItem>
+                <ListItem itemprop="keywords">
                     <b>Svelte</b>, SvelteKit
-                </li>
-                <li class="list__item" itemprop="keywords" role="listitem">
+                </ListItem>
+                <ListItem itemprop="keywords">
                     JavaScript ES5, ES6, <b>TypeScript</b>, Node.js
-                </li>
-            </ul>
-            <ul class="list" aria-label="Список менее ключевых слов технологий" role="list">
-                <li class="list__item" itemprop="keywords" role="listitem">
+                </ListItem>
+            </List>
+            <List aria-label="Список менее ключевых слов технологий">
+                <ListItem itemprop="keywords">
                     REST API на Express, Koa, Adonis.js по
                     <PageLink href="http://jsonapi.org/">
                         jsonapi
@@ -135,25 +84,24 @@
                     <PageLink href="https://jwt.io/">
                         JWT
                     </PageLink>
-                </li>
-                <li class="list__item" itemprop="keywords" role="listitem">
+                </ListItem>
+                <ListItem itemprop="keywords">
                     HTML5, CSS3, Stylus, Less, Sass, PostCSS и БЭМ методология
-                </li>
-                <li class="list__item" itemprop="keywords" role="listitem">
+                </ListItem>
+                <ListItem itemprop="keywords">
                     <i>Сборщики Webpack, Gulp, Grunt</i>
-                </li>
-                <li class="list__item" role="listitem">
+                </ListItem>
+                <ListItem>
                     <i>jQuery, ну а как без него?</i>
-                </li>
-            </ul>
-            <!-- /.list -->
+                </ListItem>
+            </List>
         </article>
         <article tabindex="3">
-            <h3 class="page__h3">
+            <HeadingSecondary>
                 Что изучаю
-            </h3>
-            <ul class="list" aria-label="Список книг которые читаю" role="list">
-                <li class="list__item" role="listitem">
+            </HeadingSecondary>
+            <List aria-label="Список книг которые читаю">
+                <ListItem>
                     Прошёл курс
                     <PageLink
                         aria-label="Прошёл курс Введение в архитектуру ЭВМ. Элементы операционных систем."
@@ -161,8 +109,8 @@
                     >
                         <s>Введение в архитектуру ЭВМ. Элементы операционных систем.</s>
                     </PageLink>
-                </li>
-                <li class="list__item" role="listitem">
+                </ListItem>
+                <ListItem>
                     Книгу
                     <PageLink
                         aria-label="Прочитал книгу Чистая архитектура. Искусство разработки программного обеспечения"
@@ -170,12 +118,11 @@
                     >
                         <s>Чистая архитектура. Искусство разработки программного обеспечения</s>
                     </PageLink>
-                </li>
-                <li class="list__item" role="listitem">
+                </ListItem>
+                <ListItem>
                     Книгу
                     <PageLink
-                        aria-label="Прочитал книгу The
-              Swift Programming Language"
+                        aria-label="Прочитал книгу The Swift Programming Language"
                         href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/index.html"
                     >
                         <s>
@@ -183,29 +130,28 @@
                             Swift Programming Language
                         </s>
                     </PageLink>
-                </li>
+                </ListItem>
 
-                <li class="list__item" role="listitem">
+                <ListItem>
                     <PageLink
                         aria-label="Прочитал Angular 2 Developer Guide"
                         href="https://angular.io/docs/ts/latest/guide/"
                     >
                         <s>Angular 2 Developer Guide</s>
                     </PageLink>
-                </li>
+                </ListItem>
 
-                <li class="list__item" role="listitem">
+                <ListItem>
                     Книгу
                     <PageLink
-                        aria-label="Прочитал книгу The Rust
-            Programming Language"
+                        aria-label="Прочитал книгу The Rust Programming Language"
                         href="https://rurust.github.io/rust_book_ru/"
                     >
                         <s>The Rust Programming Language</s>
                     </PageLink>
-                </li>
+                </ListItem>
 
-                <li class="list__item" role="listitem">
+                <ListItem>
                     Книгу
                     <PageLink
                         aria-label="Прочитал книгу The Lean Startup"
@@ -216,15 +162,12 @@
                             Lean Startup
                         </s>
                     </PageLink>
-                </li>
-                <li class="list__item" role="listitem">
+                </ListItem>
+                <ListItem>
                     А еще решаю непростые задачки нa
                     <PageLink aria-label="Профиль на Codewars" href="https://www.codewars.com/users/JiLiZART">
-                        Codewars <span
-                        class="badge"
-                        style={badgeStyle}
-                        title="Codewards Badge"
-                    />
+                        Codewars
+                        <Badge url={codewarsBadgeUrl} title="Codewards Badge"/>
                     </PageLink>
                     <br>
                     и
@@ -232,165 +175,16 @@
                         Hackerrank
                     </PageLink>
                     с помощью js и Swift
-                </li>
-            </ul>
+                </ListItem>
+            </List>
         </article>
         <article tabindex="4">
-            <h3 class="page__h3">
-                Мои поделки
-            </h3>
-            <ul class="list projects" role="list" aria-label="Список проектов на Гитхабе">
-                {#each githubProjects as item (item.title)}
-                <li class="list__item projects__item" role="listitem">
-                    <GithubFavicon class="projects__item-icon" aria-hidden="true" />
-                    <PageLink class="projects__item-link" href={item.url}>
-                        { item.title }
-                    </PageLink>
-                    <span class="projects__item-text">
-              — { item.text }
-            </span>
-                </li>
-                    {/each}
-            </ul>
+            <HeadingSecondary>Мои поделки</HeadingSecondary>
+            <Projects items={githubProjects} aria-label="Список проектов на Гитхабе"/>
         </article>
         <article tabindex="5">
-            <h3 class="page__h3">
-                Пишу на Хабрахабр <span aria-hidden="true">
-            📝
-          </span>
-            </h3>
-            <ul class="list articles" role="list" aria-label="Список статей на Хабре">
-                {#each habrArticles as item (item.title)}
-                <li class="list__item articles__item" role="listitem">
-                    <HabrFavicon class="articles__item-icon" aria-hidden="true" />
-                    <PageLink class="articles__item-link" href={item.url}>
-                        { item.title }
-                    </PageLink>
-                </li>
-                {/each}
-            </ul>
+            <HeadingSecondary>Пишу на Хабрахабр <span aria-hidden="true">📝</span></HeadingSecondary>
+            <Articles items={habrArticles} aria-label="Список статей на Хабре"/>
         </article>
-    </main>
+    </Main>
 </section>
-
-<style>
-    .page__text {
-        margin: 0;
-        margin-bottom: 0.5rem;
-    }
-    .page__h1,
-    .page__h2,
-    .page__h3,
-    .page__text h1,
-    .page__text h2,
-    .page__text h3 {
-        margin: 0;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-    .page__h1,
-    .page__text h1 {
-        font-size: 2.25rem;
-        font-weight: 400;
-    }
-    @media screen and (min-width: 700px) {
-        .page__h1,
-        .page__text h1 {
-            font-size: 3.875rem;
-        }
-    }
-    .page__h2,
-    .page__text h2 {
-        font-size: 2.25rem;
-        font-weight: 400;
-    }
-    .page__h3,
-    .page__text h3 {
-        font-size: 1.625rem;
-        font-weight: 500;
-    }
-    @media screen and (min-width: 700px) {
-        .page__h3,
-        .page__text h3 {
-            font-size: 2.125rem;
-        }
-    }
-    .page__p,
-    .page__text p {
-        margin: 0;
-        margin-bottom: 0.5rem;
-    }
-
-    .page__text_small {
-        font-size: 1rem;
-        font-weight: 300;
-    }
-    @media screen and (min-width: 700px) {
-        .page__text_small {
-            font-size: 1.425rem;
-            line-height: 1.3;
-            max-width: 825px;
-        }
-    }
-    .page__text_gray {
-        color: #666;
-    }
-
-    .list {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-    .list__item {
-        margin-bottom: 0.5rem;
-    }
-
-    .list_bullets {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        color: black;
-    }
-
-    .main {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-    @media screen and (min-width: 700px) {
-        .main {
-            flex-wrap: nowrap;
-        }
-    }
-    .main article {
-        margin-bottom: 1rem;
-    }
-
-    .index-page__techs {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-    .projects .projects__item-link.projects__item-link,
-    .projects .projects__item-icon.projects__item-icon {
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 0.25rem;
-    }
-    .articles .articles__item {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-    .articles .articles__item-link.articles__item-link,
-    .articles .articles__item-icon.articles__item-icon {
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 0.25rem;
-    }
-    .badge {
-        height: 20px;
-        width: 120px;
-        display: inline-block;
-        vertical-align: top;
-    }
-</style>

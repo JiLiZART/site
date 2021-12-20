@@ -1,13 +1,15 @@
 <script>
     export let href = null
     export let active = false
+    export let small = false
+    export let light = false
     let className = '';
 
     export { className as class };
 </script>
 
 <a {...$$props} href={href} target="_blank" rel="noopener noreferrer nofollow" class={`link ${className}`}
-   class:active={active}>
+   class:active={active} class:small={small} class:light={light} class:leftXs={$$props['left-xs']}>
     <slot></slot>
 </a>
 
@@ -34,5 +36,17 @@
 
     .active {
         color: #00254a;
+    }
+
+    .small {
+        font-size: 1.5rem;
+    }
+
+    .light {
+        font-weight: 300;
+    }
+
+    .leftXs {
+        margin-left: 1rem;
     }
 </style>

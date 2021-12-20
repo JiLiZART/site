@@ -5,6 +5,7 @@
     import Main from '../components/Main.svelte'
     import List from '../components/List.svelte'
     import ListItem from '../components/ListItem.svelte'
+    import HeaderGroup from '../components/HeaderGroup.svelte'
     import HeadingSecondary from '../components/HeadingSecondary.svelte'
     import HeadingPrimary from '../components/HeadingPrimary.svelte'
     import TechsLogos from '../components/TechsLogos.svelte'
@@ -13,13 +14,18 @@
     import Badge from '../components/Badge.svelte';
     import habrArticles from '../data/articles';
     import githubProjects from '../data/projects';
-
-    const codewarsBadgeUrl = 'https://www.codewars.com/users/JiLiZART/badges/micro'
+    import links from '../data/links';
 </script>
 
 <section itemprop="author" itemscope itemtype="http://schema.org/Person">
     <header role="banner" tabindex="1">
-        <HeadingPrimary itemprop="name">Николай Костюрин</HeadingPrimary>
+        <HeaderGroup>
+            <HeadingPrimary itemprop="name">
+                Николай Костюрин
+            </HeadingPrimary>
+            <PageLink small="{true}" light="{true}" left-xs href={links.mailto}>Напиши мне</PageLink>
+            <PageLink small="{true}" light="{true}" left-xs href={links.cv}>CV</PageLink>
+        </HeaderGroup>
         <PageDescription>
             Работаю JavaScript Разработчиком в
             <PageLink href="https://mu.se/" aria-label="Компания Muse Group">
@@ -167,7 +173,7 @@
                     А еще решаю непростые задачки нa
                     <PageLink aria-label="Профиль на Codewars" href="https://www.codewars.com/users/JiLiZART">
                         Codewars
-                        <Badge url={codewarsBadgeUrl} title="Codewards Badge"/>
+                        <Badge url={links.codewarsBadge} title="Codewards Badge"/>
                     </PageLink>
                     <br>
                     и

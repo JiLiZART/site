@@ -4,7 +4,9 @@
 
 <style>
     .h1 {
-        margin: 1rem 0;
+        display: flex;
+        align-items: center;
+        margin: 0;
         font-size: 2.25rem;
         font-weight: 400;
     }

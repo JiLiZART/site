@@ -1,0 +1,11 @@
+<hgroup class="header-group">
+    <slot></slot>
+</hgroup>
+
+<style>
+    .header-group {
+        display: inline-flex;
+        align-items: center;
+        margin: 0;
+    }
+</style>

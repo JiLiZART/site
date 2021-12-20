@@ -41,8 +41,12 @@
             href={links.github} itemprop="github" aria-label="Контакт на Github">Github
         </PageLink>
     </PageText>
+    <br>
     <PageText>Для HR у меня есть
-        <PageLink href={links.cv} aria-label="Ссылка на Резюме">CV</PageLink>
+        <PageLink href={links.cv} aria-label="Ссылка на Резюме">CV</PageLink>.
+    </PageText>
+    <PageText><span aria-hidden="true">⚡</span>SvelteKit
+        <PageLink href={links.repo} aria-label="Ссылка на Github этого сайта">Github Repo</PageLink>
     </PageText>
 </footer>
 

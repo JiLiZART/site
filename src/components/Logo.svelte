@@ -1,8 +1,7 @@
-<span class="logo" title="artkost" aria-hidden="true"></span>
+<span class="logo" title="Artkost" aria-hidden="true"></span>
 
 <style>
     .logo {
-        margin-bottom: 10px;
         display: block;
         width: 276px;
         height: 79px;

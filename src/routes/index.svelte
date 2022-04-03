@@ -23,25 +23,23 @@
             <HeadingPrimary itemprop="name">
                 Николай Костюрин
             </HeadingPrimary>
-            <PageLink small="{true}" light="{true}" left-xs href={links.mailto}>Напиши мне</PageLink>
-            <PageLink small="{true}" light="{true}" left-xs href={links.cv}>CV</PageLink>
+            <PageLink small="{true}" light="{true}" href={links.telegram}>@jilizart</PageLink>
+            <PageLink small="{true}" light="{true}" href={links.mailto}>@mail</PageLink>
+            <PageLink small="{true}" light="{true}" href={links.cv}>cv</PageLink>
         </HeaderGroup>
         <PageDescription>
-            Работаю JavaScript Разработчиком в
-            <PageLink href="https://mu.se/" aria-label="Компания Muse Group">
-                Muse Group
-            </PageLink>
-            <span aria-hidden="true">
-          🎸
-        </span>
-            <br> над проектом
-            <PageLink href="https://musescore.com" aria-label="Проект Musescore">
-                Musescore
-            </PageLink>
-            <span aria-hidden="true">🎶</span>
-            <br>
+            <PageText>JavaScript Разработчик</PageText>
             <PageText gray small>
-                Раньше проходил стажировку в
+                Работал над проектами
+                <PageLink href="https://musescore.com" aria-label="Проект Musescore">
+                    Musescore
+                </PageLink>
+                <span aria-hidden="true">🎶</span>
+                и
+                <PageLink href="https://www.ultimate-guitar.com/" aria-label="Проект Ultimate Guitar">
+                    Ultimate Guitar
+                </PageLink>
+                <span aria-hidden="true">🎸</span>, так же работал в
                 <PageLink href="https://skyeng.ru/" aria-label="Skyeng">
                     Skyeng
                 </PageLink>

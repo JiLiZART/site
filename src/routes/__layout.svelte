@@ -78,7 +78,7 @@
     .header {
         display: flex;
         align-items: center;
-        padding-top: 1rem;
+        margin: 1rem 0;
     }
 
     .page {

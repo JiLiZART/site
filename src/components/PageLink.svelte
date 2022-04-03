@@ -45,8 +45,4 @@
     .light {
         font-weight: 300;
     }
-
-    .leftXs {
-        margin-left: 1rem;
-    }
 </style>

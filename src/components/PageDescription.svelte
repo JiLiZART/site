@@ -4,8 +4,6 @@
     .description {
         font-size: 1.625rem;
         font-weight: 300;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
     }
     @media screen and (min-width: 700px) {
         .description {

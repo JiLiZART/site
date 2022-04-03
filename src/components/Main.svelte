@@ -4,6 +4,7 @@
 
 <style>
     .main {
+        margin-top: 1rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;

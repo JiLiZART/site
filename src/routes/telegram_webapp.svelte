@@ -35,7 +35,13 @@
         width: 100%;
         color: var(--tg-theme-button-text-color, white);
         background: var(--tg-theme-button-color, black);
+        appearance: none;
         margin: 0 10px;
         padding: 8px 14px;
+        border-radius: 4px;
+        outline: none;
+        font-family: Rubik, NotoSans, Roboto, Helvetica, Arial, serif;
+        font-size: 18px;
+        border: 1px solid var(--tg-theme-button-color, black);
     }
 </style>

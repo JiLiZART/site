@@ -13,7 +13,7 @@
         align-items: center;
         justify-content: center;
         gap: 22px;
-        padding: 10px;
+        padding: 14px;
         background: #CB6A00;
 
         z-index: 40;

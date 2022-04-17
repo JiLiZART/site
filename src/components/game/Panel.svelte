@@ -3,6 +3,11 @@
 </div>
 
 <style>
+    @font-face {
+        font-family: "Arcade";
+        src: url("../../assets/game/font/ARCADECLASSIC.woff2") format("woff2");
+    }
+
     .panel {
         font-family: "Arcade", monospace;
         line-height: 0.6;

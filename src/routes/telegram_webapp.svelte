@@ -9,6 +9,10 @@
     onMount(() => {
         if (window?.Telegram?.WebApp) {
             window?.Telegram?.WebApp.ready()
+
+            setTimeout(() => {
+                window?.Telegram?.WebApp?.MainButton?.show()
+            }, 1000 * 4)
         }
     })
 

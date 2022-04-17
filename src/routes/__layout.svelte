@@ -1,7 +1,6 @@
 <script>
     import Logo from '../components/Logo.svelte'
-    import Footer from '../components/Footer.svelte'
-    import links from '../data/links';
+    import Page from '../components/Page.svelte'
 </script>
 
 <svelte:head>
@@ -48,13 +47,12 @@
     <link rel="manifest" href="/manifest.json" data-hid="manifest">
 </svelte:head>
 
-<div class="page" itemref="data-author" itemscope itemtype="http://schema.org/WebSite">
+<Page>
     <header class="header" aria-hidden="true">
         <Logo />
     </header>
     <slot></slot>
-    <Footer links={links} />
-</div>
+</Page>
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCBMSF"
@@ -64,7 +62,17 @@
 <img src="https://mc.yandex.ru/watch/860366" style="position:absolute; left:-9999px;" alt="" />
 
 <style>
+    :global(html) {
+        background: #f6f1f9;
+        line-height: 1.15; /* 1 */
+        -webkit-text-size-adjust: 100%; /* 2 */
+        min-height: 100%;
+    }
     :global(body) {
+        min-height: 100%;
+        min-height: 100vh;
+        touch-action: manipulation;
+        box-sizing: border-box;
         margin: 0;
         direction: ltr;
         font-family: Rubik, NotoSans, Roboto, Helvetica, Arial, serif;
@@ -73,25 +81,11 @@
         line-height: 1.3;
         -webkit-font-smoothing: subpixel-antialiased;
         -moz-osx-font-smoothing: auto;
-        background: #f6f1f9;
+        -webkit-tap-highlight-color: transparent;
     }
     .header {
         display: flex;
         align-items: center;
         margin: 1rem 0;
-    }
-
-    .page {
-        color: #333;
-        background: #f6f1f9;
-        padding: 10px 4% 0;
-        transition-property: background, color;
-        transition-duration: 0.33s;
-        transition-timing-function: ease-out;
-    }
-    @media screen and (min-width: 700px) {
-        .page {
-            padding: 10px 8% 0;
-        }
     }
 </style>

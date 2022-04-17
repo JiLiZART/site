@@ -12,6 +12,7 @@
     import Articles from '../components/Articles.svelte';
     import Projects from '../components/Projects.svelte';
     import Badge from '../components/Badge.svelte';
+    import Footer from '../components/Footer.svelte'
     import habrArticles from '../data/articles';
     import githubProjects from '../data/projects';
     import links from '../data/links';
@@ -191,4 +192,5 @@
             <Articles items={habrArticles} aria-label="Список статей на Хабре"/>
         </article>
     </Main>
+    <Footer links={links} />
 </section>

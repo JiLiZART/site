@@ -1,5 +1,6 @@
 <script>
     import Logo from '../components/Logo.svelte'
+    import Link from '../components/PageLink.svelte'
     import Footer from '../components/Footer.svelte'
     import links from '../data/links';
 </script>
@@ -50,7 +51,8 @@
 
 <div class="page" itemref="data-author" itemscope itemtype="http://schema.org/WebSite">
     <header class="header" aria-hidden="true">
-        <Logo />
+        <Link href="/"><Logo /></Link>
+        <Link small light href="/hex">Hex/RGB/HSLA Color</Link>
     </header>
     <slot></slot>
     <Footer links={links} />
@@ -74,16 +76,30 @@
         -webkit-font-smoothing: subpixel-antialiased;
         -moz-osx-font-smoothing: auto;
         background: #f6f1f9;
+        transition-property: background, color;
+        transition-duration: 0.33s;
+        transition-timing-function: ease-out;
     }
+
+    :global(input) {
+        direction: ltr;
+        font-family: Rubik, NotoSans, Roboto, Helvetica, Arial, serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.3;
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+
     .header {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         margin: 1rem 0;
+        gap: 1rem;
     }
 
     .page {
         color: #333;
-        background: #f6f1f9;
         padding: 10px 4% 0;
         transition-property: background, color;
         transition-duration: 0.33s;

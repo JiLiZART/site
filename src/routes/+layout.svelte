@@ -52,7 +52,7 @@
 <div class="page" itemref="data-author" itemscope itemtype="http://schema.org/WebSite">
     <header class="header" aria-hidden="true">
         <Link href="/"><Logo /></Link>
-        <Link small light href="/hex">Hex/RGB/HSLA Color</Link>
+        <Link small light href="/hex">#color</Link>
     </header>
     <slot></slot>
     <Footer links={links} />

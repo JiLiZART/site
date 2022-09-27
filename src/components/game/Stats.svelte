@@ -1,41 +1,35 @@
 <script>
     import Panel from './Panel.svelte';
+
+    let rounds = Array.from({ length: 10 }, (_, i) => i + 1);
+    let activeRound = 2;
+
+    let ducks = Array.from({ length: 10 }, (_, i) => i + 1).map(idx => ({
+        id: idx,
+        name: `Duck ${idx}`,
+        dead: idx % 2 === 0,
+    }))
+
 </script>
 <Panel>
     <div class="stats">
         <div class="hit">HIT</div>
         <div class="counts">
             <div class="ducks">
-                <div class="duck live"></div>
-                <div class="duck dead"></div>
-                <div class="duck live"></div>
-                <div class="duck dead"></div>
-
-                <div class="duck live"></div>
-                <div class="duck live"></div>
-                <div class="duck live"></div>
-                <div class="duck live"></div>
-                <div class="duck live"></div>
-                <div class="duck live"></div>
+                {#each ducks as duck}
+                    <div class="duck" class:dead={duck.dead}></div>
+                {/each}
             </div>
             <div class="rounds">
-                <div class="round active"></div>
-                <div class="round"></div>
-                <div class="round"></div>
-                <div class="round"></div>
-                <div class="round"></div>
-                <div class="round"></div>
-                <div class="round"></div>
-                <div class="round"></div>
-                <div class="round"></div>
-                <div class="round"></div>
+                {#each rounds as roundIndex}
+                    <div class="round" class:active={roundIndex === activeRound}></div>
+                {/each}
             </div>
         </div>
     </div>
 </Panel>
 
 <style>
-
     .stats {
         display: flex;
         gap: 22px;
@@ -75,9 +69,6 @@
         height: 40px;
         background-repeat: no-repeat;
         background-size: contain;
-    }
-
-    .stats .duck.live {
         background-image: url('../../assets/game/hud/score-live/0.png');
     }
 

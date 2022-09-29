@@ -66,6 +66,9 @@
 <img src="https://mc.yandex.ru/watch/860366" style="position:absolute; left:-9999px;" alt="" />
 
 <style>
+    :root {
+        --outline-width: calc(1rem / 16 * 3);
+    }
     :global(body) {
         margin: 0;
         direction: ltr;
@@ -89,6 +92,19 @@
         line-height: 1.3;
         -webkit-font-smoothing: subpixel-antialiased;
         -moz-osx-font-smoothing: auto;
+    }
+
+    :global(:focus),
+    :global(:focus-visible) {
+        outline: none;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 0 var(--outline-width) rgba(0, 74, 148, 0.4);
+
+    }
+
+    :global(:focus:not(:focus-visible)) {
+        outline: none;
+        box-shadow: none;
     }
 
     .header {

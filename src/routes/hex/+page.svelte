@@ -152,8 +152,7 @@
         let luma = 150
 
         if (result) {
-            const [r, g, b] = result
-            luma = getLuma(r, g, b)
+            luma = getLuma(...result)
         }
 
         isLight = luma >= 200

@@ -1,5 +1,6 @@
 <script>
     import Logo from '../components/Logo.svelte'
+    import Link from '../components/PageLink.svelte'
     import Footer from '../components/Footer.svelte'
     import links from '../data/links';
 </script>
@@ -50,7 +51,8 @@
 
 <div class="page" itemref="data-author" itemscope itemtype="http://schema.org/WebSite">
     <header class="header" aria-hidden="true">
-        <Logo />
+        <Link href="/"><Logo /></Link>
+        <Link small light href="/hex">#color</Link>
     </header>
     <slot></slot>
     <Footer links={links} />
@@ -64,6 +66,9 @@
 <img src="https://mc.yandex.ru/watch/860366" style="position:absolute; left:-9999px;" alt="" />
 
 <style>
+    :root {
+        --outline-width: calc(1rem / 16 * 3);
+    }
     :global(body) {
         margin: 0;
         direction: ltr;
@@ -74,16 +79,43 @@
         -webkit-font-smoothing: subpixel-antialiased;
         -moz-osx-font-smoothing: auto;
         background: #f6f1f9;
+        transition-property: background, color;
+        transition-duration: 0.33s;
+        transition-timing-function: ease-out;
     }
+
+    :global(input) {
+        direction: ltr;
+        font-family: Rubik, NotoSans, Roboto, Helvetica, Arial, serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.3;
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+
+    :global(:focus),
+    :global(:focus-visible) {
+        outline: none;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 0 var(--outline-width) rgba(0, 74, 148, 0.4);
+
+    }
+
+    :global(:focus:not(:focus-visible)) {
+        outline: none;
+        box-shadow: none;
+    }
+
     .header {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         margin: 1rem 0;
+        gap: 1rem;
     }
 
     .page {
         color: #333;
-        background: #f6f1f9;
         padding: 10px 4% 0;
         transition-property: background, color;
         transition-duration: 0.33s;

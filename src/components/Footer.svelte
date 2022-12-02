@@ -12,7 +12,6 @@
     itemscope
     itemtype="http://schema.org/Person"
     role="contentinfo"
-    tabindex="6"
 >
     <HeadingSecondary>Со мной можно связаться 🤙</HeadingSecondary>
     <meta itemprop="name" content="Николай Костюрин">

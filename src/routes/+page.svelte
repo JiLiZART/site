@@ -18,7 +18,7 @@
 </script>
 
 <section itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <header role="banner" tabindex="1">
+    <header role="banner">
         <HeaderGroup>
             <HeadingPrimary itemprop="name">
                 Николай Костюрин
@@ -58,7 +58,7 @@
         </PageDescription>
     </header>
     <Main>
-        <article tabindex="2">
+        <article>
             <TechsLogos/>
             <List bullets aria-label="Список ключевых слов технологий">
                 <ListItem itemprop="keywords">
@@ -100,7 +100,7 @@
                 </ListItem>
             </List>
         </article>
-        <article tabindex="3">
+        <article>
             <HeadingSecondary>
                 Что изучаю
             </HeadingSecondary>
@@ -182,11 +182,11 @@
                 </ListItem>
             </List>
         </article>
-        <article tabindex="4">
+        <article>
             <HeadingSecondary>Мои поделки</HeadingSecondary>
             <Projects items={githubProjects} aria-label="Список проектов на Гитхабе"/>
         </article>
-        <article tabindex="5">
+        <article>
             <HeadingSecondary>Пишу на Хабрахабр <span aria-hidden="true">📝</span></HeadingSecondary>
             <Articles items={habrArticles} aria-label="Список статей на Хабре"/>
         </article>

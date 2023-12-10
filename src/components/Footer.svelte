@@ -22,7 +22,7 @@
             <PageLink rel="me" href={links.mailto} itemprop="email" aria-label="Contact me at Email">nikolay@artkost.ru</PageLink>
             .
         </PageText>
-        <PageText>Also you can found me on
+        <PageText>Also you can find me on
             <PageLink rel="me" href={links.twitter} itemprop="twitter" aria-label="Contact in Twitter">Twitter</PageLink>
             ,
             <PageLink rel="me"

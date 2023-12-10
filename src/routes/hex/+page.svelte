@@ -1,9 +1,29 @@
 <script>
+    import Snackbar from '../../components/Snackbar.svelte'
+
+    let showSnakbar = false
+    let snakbarText = ''
+
     let hex = ''
     let rgb = ''
 
     let isDark = false
     let isLight = true;
+
+    const rgb_RE = /^rgba?\((.*)\);?$/
+    const digit_RE = /(\d+),(\d+),(\d+)/
+
+    const to_rgb_RE = /(\d{3})(?=\d)/g
+
+    function toast(text) {
+        showSnakbar = true
+        snakbarText = text
+        setTimeout(function(){
+            showSnakbar = false
+            snakbarText = ''
+        }, 2000);
+    }
+
 
     function toBodyStyle(value) {
         if (value || value === null) {
@@ -43,8 +63,6 @@
     }
 
     function parseRGB(rgb) {
-        const rgb_RE = /^rgba?\((.*)\);?$/
-        const digit_RE = /(\d+),(\d+),(\d+)/
 
         if (!rgb) {
             return ''
@@ -64,7 +82,6 @@
 
         return [r,g,b]
     }
-
 
     function getLuma(r, g, b) {
         return (0.299 * r + 0.587 * g + 0.114 * b)
@@ -100,13 +117,9 @@
         return `#${cToHex(r)}${cToHex(g)}${cToHex(b)}`
     }
 
-    function onHex(e) {
-        const value = e.target.value
-
+    function applyHex(value) {
         if (value) {
             const result = toRGB(value)
-
-
 
             if (result) {
                 rgb = result
@@ -120,11 +133,47 @@
         }
     }
 
+    function onHex(e) {
+        applyHex(e.target.value)
+    }
+
+    function onHexFocus(e) {
+
+        e.target.setSelectionRange(0, e.target.value.length)
+    }
+
+    function onHexPaste(e) {
+        e.preventDefault()
+        const text = e.clipboardData.getData('text')
+
+        hex = text.replace('#', '')
+
+        console.log('hex paste', text, text.replace('#', ''), hex)
+
+        applyHex(hex)
+    }
+
+    function onHexCopy(e) {
+        const selection = document.getSelection();
+        const selected = selection.toString().toUpperCase()
+
+        e.clipboardData.setData("text/plain", `#${selected}`);
+
+        e.preventDefault();
+
+        toast(`Copied #${selected}`)
+    }
+
     function onRgb(e) {
         const value = e.target.value
 
         if (value) {
             const result = toHEX(value)
+
+            if (value.length) {
+                hex = value.replace(to_rgb_RE, '$1,')
+            }
+
 
             if (result) {
                 hex = result
@@ -163,10 +212,33 @@
 
 <main class="container">
     <section class="colors" class:dark={isDark} class:light={isLight}>
-        <input autofocus name="hex" type="text" placeholder="hex" autocomplete="false" pattern="[0-9a-fA-F]+" on:input={onHex} bind:value={hex} />
-        <input name="rgb" type="text" placeholder="rgb" autocomplete="false" on:input={onRgb} bind:value={rgb} />
+        <div class="field">
+            <div class="field__prefix field__prefix_hex">#</div>
+            <input
+                autoFocus
+                name="hex"
+                type="text"
+                placeholder="hex"
+                autocomplete="false"
+                pattern="[0-9a-fA-F]+"
+                maxlength="6"
+                on:paste={onHexPaste}
+                on:copy={onHexCopy}
+                on:focus={onHexFocus}
+                on:input={onHex}
+                bind:value={hex}
+            />
+        </div>
+        <div class="field">
+            <div class="field__prefix field__prefix_rgb">rgba(</div>
+            <input name="rgb" type="text" placeholder="rgb" autocomplete="false" on:input={onRgb} bind:value={rgb} />
+            <div class="field__postfix">)</div>
+        </div>
     </section>
 </main>
+<Snackbar show={showSnakbar}>
+    {snakbarText}
+</Snackbar>
 
 <style>
     .container {
@@ -177,30 +249,50 @@
         justify-content: center;
     }
 
-    .colors input {
-        display: block;
-        width: 335px;
+    .field {
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
+
         font-size: 34px;
+        font-weight: 300;
+        line-height: 44px;
+        border-bottom: 1px dotted rgba(0,0,0,.4);
+        padding: 4px 0;
+        transition: border 1s ease;
+    }
+
+    .field input {
+        display: block;
+        font-size: 34px;
+        font-weight: 300;
         line-height: 44px;
         background: 0 0;
         border: none;
-        border-bottom: 1px dotted rgba(0,0,0,.4);
-        padding: 5px 0;
         border-radius: 0;
-        font-weight: 300;
     }
 
-    .colors input:focus {
+    .field input:focus-visible,
+    .field input:focus {
         outline: none;
+        box-shadow: none;
         border-bottom-color: currentColor;
     }
 
-    .light input {
+    .field__prefix_hex {
+        margin-left: -28px;
+    }
+
+    .field__prefix_rgb {
+        margin-left: -82px;
+    }
+
+    .light .field {
         color: black;
         border-bottom-color: rgba(0,0,0,.4);
     }
 
-    .dark input {
+    .dark .field {
         color: white;
         border-bottom-color: rgba(255,255,255,.4);
     }

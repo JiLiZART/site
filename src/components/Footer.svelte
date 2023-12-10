@@ -13,39 +13,50 @@
     itemtype="http://schema.org/Person"
     role="contentinfo"
 >
-    <HeadingSecondary>Со мной можно связаться 🤙</HeadingSecondary>
+    <HeadingSecondary>You can contact me 🤙</HeadingSecondary>
     <meta itemprop="name" content="Николай Костюрин">
-    <PageText>По скайпу
-        <PageLink href={links.skype} itemprop="skype" aria-label="Контакт в Skype">JiLiZART</PageLink>
-        или написать на почту
-        <PageLink href={links.mailto} itemprop="email" aria-label="Контакт по Email">nikolay@artkost.ru</PageLink>
-        .
-    </PageText>
-    <PageText>Так же я есть в
-        <PageLink href={links.twitter} itemprop="twitter" aria-label="Контакт в Twitter">Twitter</PageLink>
-        ,
-        <PageLink
-            href={links.linkedin} itemprop="linkedin" aria-label="Контакт в Linkedin">Linkedin
-        </PageLink>
-        ,
-        <PageLink
-            href={links.facebook} itemprop="facebook" aria-label="Контакт в Facebook">Facebook
-        </PageLink>
-        ,
-        <PageLink
-            href={links.telegram} itemprop="telegram" aria-label="Контакт в Telegram">Telegram
-        </PageLink>
-        и
-        <PageLink
-            href={links.github} itemprop="github" aria-label="Контакт на Github">Github
-        </PageLink>
-    </PageText>
-    <br>
-    <PageText>Для HR у меня есть
-        <PageLink href={links.cv} aria-label="Ссылка на Резюме">CV</PageLink>.
-    </PageText>
-    <PageText><span aria-hidden="true">⚡</span>SvelteKit
-        <PageLink href={links.repo} aria-label="Ссылка на Github этого сайта">Github Repo</PageLink>
-    </PageText>
+    <section class="section">
+        <PageText>By Skype
+            <PageLink rel="me" href={links.skype} itemprop="skype" aria-label="Contact me at Skype">JiLiZART</PageLink>
+            or drop a line to
+            <PageLink rel="me" href={links.mailto} itemprop="email" aria-label="Contact me at Email">nikolay@artkost.ru</PageLink>
+            .
+        </PageText>
+        <PageText>Also you can found me on
+            <PageLink rel="me" href={links.twitter} itemprop="twitter" aria-label="Contact in Twitter">Twitter</PageLink>
+            ,
+            <PageLink rel="me"
+                      href={links.linkedin} itemprop="linkedin" aria-label="Contact in Linkedin">Linkedin
+            </PageLink>
+            ,
+            <PageLink rel="me"
+                      href={links.facebook} itemprop="facebook" aria-label="Contact in Facebook">Facebook
+            </PageLink>
+            ,
+            <PageLink rel="me"
+                      href={links.telegram} itemprop="telegram" aria-label="Contact in Telegram">Telegram
+            </PageLink>
+            and
+            <PageLink rel="me"
+                      href={links.github} itemprop="github" aria-label="Contact on Github">Github
+            </PageLink>
+        </PageText>
+        <PageText>For HR I have
+            <PageLink rel="me" href={links.cv} aria-label="Link to CV">CV</PageLink>. <span aria-hidden="true">⚡</span>SvelteKit
+            <PageLink href={links.repo} aria-label="Github source of this site">Github Repo</PageLink>
+        </PageText>
+    </section>
 </footer>
 
+<style>
+    .footer,
+    .section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .section {
+        gap: 0.5rem;
+    }
+</style>

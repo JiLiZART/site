@@ -4,7 +4,7 @@
 
 <style>
     .h3 {
-        margin: 1rem 0;
+        margin: 0;
         font-size: 1.625rem;
         font-weight: 500;
     }

@@ -22,10 +22,7 @@
 </List>
 
 <style>
-    .projects .projects__item-link.projects__item-link,
-    .projects .projects__item-icon.projects__item-icon {
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 0.25rem;
+    .projects__item {
+        align-items: center;
     }
 </style>

@@ -15,8 +15,8 @@
 
 <style>
     .link {
-        color: #004a94;
-        fill: #004a94;
+        color: var(--link-color);
+        fill: var(--link-color);
         text-decoration: none;
         transition-property: border-bottom, border-color, background, color, fill;
         transition-duration: 0.33s;
@@ -24,18 +24,18 @@
     }
 
     .link:visited {
-        color: rgba(0, 74, 148, 0.2);
+        color: var(--link-visited-color);
     }
 
     .link:hover {
-        color: #d7370f;
-        fill: #d7370f;
-        border-color: rgba(215, 55, 15, 0.2);
+        color: var(--link-hover-color);
+        fill: var(--link-hover-color);
+        border-color: var(--link-hover-border);
         transition: none;
     }
 
     .active {
-        color: #00254a;
+        color: var(--link-active-color);
     }
 
     .small {

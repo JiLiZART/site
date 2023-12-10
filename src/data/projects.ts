@@ -3,32 +3,22 @@ const githubProjects = [
     {
         url: 'https://github.com/JiLiZART/bbob',
         title: 'BBob',
-        text: 'быстрый парсер BB кодов в AST дерево, без регулярок и зависимостей'
-    },
-    {
-        url: 'https://github.com/JiLiZART/sequence-as-promise',
-        title: 'sequence as promise',
-        text: 'выполняет массив функций последовательно и возвращает промис'
-    },
-    {
-        url: 'https://github.com/JiLiZART/may.js',
-        title: 'may.js',
-        text: 'маленькая монадоподобная функция'
+        text: 'fast parser of BB codes in AST tree, without regexps and deps'
     },
     {
         url: 'https://github.com/w3gh/ghost.js',
         title: 'ghost.js',
-        text: `<s>хост</s> и чат бот для Battle.net/PvPGN для Warcraft 3 на js`
+        text: `host and chat bot for Battle.net/PvPGN for Warcraft 3 on js`
     },
     {
         url: 'https://github.com/artkost/yii2-qa',
         title: 'yii2-qa',
-        text: 'модуль вопросов и ответов на Yii2'
+        text: 'Yii2 Q&A module'
     },
     {
         url: 'https://github.com/jilizart/task-tracker',
         title: 'task-tracker',
-        text: 'прототип таск трекера на Vue 2 для проверки бизнес идеи'
+        text: 'prototype of a task tracker in Vue 2 to test a business idea'
     }
 ]
 

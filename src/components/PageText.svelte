@@ -10,22 +10,22 @@
 <style>
     .text {
         display: inline-block;
-        margin: 0 0 0.5rem;
     }
 
     .small {
         font-size: 1rem;
         font-weight: 300;
     }
+
     .gray {
-        color: #666;
+        color: var(--text-gray-color);
     }
+
     @media screen and (min-width: 700px) {
         .small {
             font-size: 1.425rem;
             line-height: 1.3;
             max-width: 825px;
         }
-
     }
 </style>

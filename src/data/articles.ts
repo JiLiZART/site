@@ -2,31 +2,31 @@
 const habrArticles = [
     {
         url: 'https://habrahabr.ru/post/341564/',
-        title: 'Управляем состоянием в Angular при помощи Mobx'
+        title: 'Managing state in Angular using Mobx'
     },
     {
         url: 'https://habrahabr.ru/post/329580/',
-        title: 'Что нового нас ждет в Swift 4?'
+        title: 'What\'s new in Swift 4?'
     },
     {
         url: 'https://habrahabr.ru/post/282578/',
-        title: 'Mobx — управление состоянием вашего приложения'
+        title: 'Mobx - Managing your application state'
     },
     {
         url: 'https://habrahabr.ru/post/264423/',
-        title: 'Изоморфное Приложение с React и Redux'
+        title: 'Isomorphic Application with React and Redux'
     },
     {
         url: 'https://habrahabr.ru/post/233705/',
-        title: 'Настоящее модульное тестирование в AngularJS'
+        title: 'Real Unit Testing in AngularJS'
     },
     {
         url: 'https://habrahabr.ru/post/217689/',
-        title: 'Ansible и Docker, почему и зачем?'
+        title: 'Ansible and Docker, why and why?'
     },
     {
         url: 'https://habrahabr.ru/post/147038/',
-        title: 'MVC умер, пришло время MOVE'
+        title: 'MVC is dead, it\'s time to MOVE'
     }
 ]
 

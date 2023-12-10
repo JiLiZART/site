@@ -27,20 +27,25 @@
 
 <style>
     .techs-logos {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem 1rem;
+        flex-wrap: wrap;
         /*margin-top: 1rem;*/
         /*margin-bottom: 1rem;*/
     }
-
     .techs-logos__icon {
-        display: inline-block;
-        vertical-align: top;
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
         width: 2rem;
         height: 2rem;
         background-repeat: no-repeat;
         background-position: 50% 50%;
         background-size: 100% 100%;
-        margin-right: 1rem;
-        margin-bottom: 1rem;
+        /*margin-right: 1rem;*/
+        /*margin-bottom: 1rem;*/
     }
     .techs-logos__icon_js {
         background-image: url("../assets/techs/js.svg");
@@ -66,6 +71,17 @@
     .techs-logos__icon_bem {
         background-image: url("../assets/techs/bem.svg");
     }
+    @media (prefers-color-scheme: dark) {
+        .techs-logos__icon_bem {
+            filter: invert(100%);
+        }
+    }
+    :global(body.dark-mode) .techs-logos__icon_bem {
+        filter: invert(100%);
+    }
+    :global(body.light-mode) .techs-logos__icon_bem {
+        filter: invert(0);
+    }
     .techs-logos__icon_html5 {
         background-image: url("../assets/techs/html5.svg");
     }
@@ -74,6 +90,17 @@
     }
     .techs-logos__icon_stylus {
         background-image: url("../assets/techs/stylus.svg");
+    }
+    @media (prefers-color-scheme: dark) {
+        .techs-logos__icon_stylus {
+            filter: invert(100%);
+        }
+    }
+    :global(body.dark-mode) .techs-logos__icon_stylus {
+        filter: invert(100%);
+    }
+    :global(body.light-mode) .techs-logos__icon_stylus {
+        filter: invert(0);
     }
     .techs-logos__icon_less {
         background-image: url("../assets/techs/less.svg");
@@ -95,5 +122,16 @@
     }
     .techs-logos__icon_jquery {
         background-image: url("../assets/techs/jquery.svg");
+    }
+    @media (prefers-color-scheme: dark) {
+        .techs-logos__icon_jquery {
+            filter: invert(100%);
+        }
+    }
+    :global(body.dark-mode) .techs-logos__icon_jquery {
+        filter: invert(100%);
+    }
+    :global(body.light-mode) .techs-logos__icon_jquery {
+        filter: invert(0);
     }
 </style>

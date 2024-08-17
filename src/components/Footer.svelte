@@ -11,7 +11,6 @@
     itemprop="author"
     itemscope
     itemtype="http://schema.org/Person"
-    role="contentinfo"
 >
     <HeadingSecondary>You can contact me 🤙</HeadingSecondary>
     <meta itemprop="name" content="Николай Костюрин">

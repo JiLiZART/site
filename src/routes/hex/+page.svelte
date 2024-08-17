@@ -215,7 +215,6 @@
         <div class="field">
             <div class="field__prefix field__prefix_hex">#</div>
             <input
-                autoFocus
                 name="hex"
                 type="text"
                 placeholder="hex"

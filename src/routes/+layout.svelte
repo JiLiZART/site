@@ -65,27 +65,21 @@
 <svelte:head>
     <html lang="en-US" class="dark" />
     <link rel="dns-prefetch" href="//google-analytics.com">
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WCBMSF');</script>
-    <!-- End Google Tag Manager -->
 
-    <title>Николай Костюрин — JavaScript Developer - https://artkost.ru/</title>
+<!--    <title>Nikolay Kost — JavaScript Developer - https://artkost.ru/</title>-->
+    <title>Nikolay Kost — JavaScript Developer - https://artkost.ru/</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="subject" content="Николай Костюрин — Fullstack Web Developer">
-    <meta data-hid="description" name="description" content="Николай Костюрин — Fullstack Web Developer">
+    <meta name="theme-color" content="#f6f1f9">
+    <meta name="subject" content="Nikolay Kost — JavaScript Developer ">
+    <meta data-hid="description" name="description" content="Nikolay Kost — JavaScript Developer">
     <meta data-hid="charset" charset="utf-8">
     <meta data-hid="mobile-web-app-capable" name="mobile-web-app-capable" content="yes">
-    <meta data-hid="apple-mobile-web-app-title" name="apple-mobile-web-app-title" content="Николай Костюрин — JavaScript Разработчк">
+    <meta data-hid="apple-mobile-web-app-title" name="apple-mobile-web-app-title" content="Nikolay Kost — JavaScript Developer">
     <meta data-hid="og:type" name="og:type" property="og:type" content="website">
-    <meta data-hid="og:title" name="og:title" property="og:title" content="Николай Костюрин — JavaScript Разработчк">
-    <meta data-hid="og:site_name" name="og:site_name" property="og:site_name" content="Николай Костюрин — JavaScript Разработчк">
+    <meta data-hid="og:title" name="og:title" property="og:title" content="Nikolay Kost — JavaScript Developer">
+    <meta data-hid="og:site_name" name="og:site_name" property="og:site_name" content="Nikolay Kost — JavaScript Developer">
     <link rel="dns-prefetch" href="//google-analytics.com">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
@@ -116,14 +110,7 @@
     <Footer links={links} />
 </div>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCBMSF"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
 <img src="/stat.gif" alt="Stats pixel" layout="fixed" height="1px" width="1px" />
-<img src="https://mc.yandex.ru/watch/860366" style="position:absolute; left:-9999px;" alt="" />
 
 <style>
     :global(body.light-mode) {

@@ -37,7 +37,7 @@ self.addEventListener('activate', event => {
  * Fall back to the cache if the user is offline.
  */
 async function fetchAndCache(request) {
-    const cache = await caches.open(`offline${version}`)
+    const cache = await caches.open(ASSETS)
 
     try {
         const response = await fetch(request);

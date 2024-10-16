@@ -2,7 +2,17 @@ import { sveltePreprocess } from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-static';
 import * as child_process from 'node:child_process';
 
-const version = child_process.execSync('git rev-parse HEAD').toString().trim()
+let version = '3';
+
+try {
+	child_process.exec('git rev-parse HEAD', (err, stdout) => {
+		if (!err) {
+			version = stdout.toString().trim();
+		}
+	})
+} catch {
+
+}
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
